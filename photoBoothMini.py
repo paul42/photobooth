@@ -114,6 +114,7 @@ def blackScreen():
   background2.blit(img, (0,0))
   window.blit(background2,(0,0))
   pygame.display.flip()
+  syslog.syslog('flipped')
   #message = 'Touch to Start'
   #text = messageFont.render(str(message),1,(255,255,255))
   #xPos = (xPhotoResolution // 2 ) - (text.get_width()//2)

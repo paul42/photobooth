@@ -78,7 +78,7 @@ def startCountdown(photoCount):
     message = ':)'
   else:
     message = countDown -1 
-  #background = pygame.Surface(window.get_size())
+  background = pygame.Surface(window.get_size())
   text = font.render(str(message),1,(255,255,255))
   photosRemain = '%s / 4' % (photoCount)
   photoCountbox = countFont.render(str(photosRemain),1,(0,255,0))
@@ -98,7 +98,7 @@ def startCountdown(photoCount):
 
 def compileMessage():
   message = 'Please wait'
-  #background = pygame.Surface(window.get_size())
+  background = pygame.Surface(window.get_size())
   text = messageFont.render(str(message),1,(255,255,255))
   xPos = (xPhotoResolution // 2 ) - (text.get_width()//2)
   yPos = (yPhotoResolution // 2 ) - (text.get_height()//2)
@@ -109,8 +109,10 @@ def compileMessage():
 def blackScreen():
   syslog.syslog('blanking out screen')
   img = pygame.image.load('touchtesttrans.tif')
-  #background = pygame.Surface(window.get_size())
-  window.blit(img,(0,0))
+  background2 = pygame.Surface(window.get_size())
+  background2.fill((0,0,0))
+  background2.blit(img, (0,0))
+  window.blit(background2,(0,0))
   pygame.display.flip()
   #message = 'Touch to Start'
   #text = messageFont.render(str(message),1,(255,255,255))
